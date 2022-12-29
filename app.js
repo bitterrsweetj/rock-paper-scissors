@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
   console.log("computer chose", computerSelection);
 
   if (playerSelection == computerSelection) {
-    console.log("draw");
+    console.log("draw"); // continue;
   } else {
     if (playerSelection == "rock") {
       if (computerSelection == "scissors") {
@@ -65,3 +65,10 @@ function playRound(playerSelection, computerSelection) {
   }
 
   playGame();
+
+  
+  // btn.addEventListener('click', () => {
+  //   const searchName = input.value.toLowerCase();
+  //   input.value = '';
+  //   input.focus();
+  //   para.textContent = '';
