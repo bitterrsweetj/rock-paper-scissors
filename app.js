@@ -9,7 +9,6 @@ const buttons = document.querySelectorAll('div.selections button');
 
 function playGame() {
   buttons.forEach(btn => {
-    btn.disabled = false; // enable selection buttons after previous round
     btn.addEventListener('click', () => {
       playerSelection = btn.innerText.toLowerCase();
       playRound(playerSelection, computerSelection);
@@ -19,7 +18,9 @@ function playGame() {
 
 resetButton.addEventListener('click', () => {
   resetScore();
-  playGame();
+  buttons.forEach(btn => {
+    btn.disabled = false; // enable selection buttons after previous round
+  });
 })
 
 function playRound(playerSelection, computerSelection) {
@@ -44,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 function displayResult(playerSelection, computerSelection) {
-  document.querySelector('.round-result').textContent = `You chose ${playerSelection} Computer chose ${computerSelection}`;
+  document.querySelector('.round-result').textContent = `You chose ${playerSelection}\. Computer chose ${computerSelection}\.`;
 }
 
 function getComputerSelection() {
@@ -57,7 +58,7 @@ function checkWinner(playerSelection, computerSelection) {
   } else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
     playerSelection === 'paper' && computerSelection === 'rock' ||
     playerSelection === 'scissors' && computerSelection === 'paper') {
-    return 'player'
+    return 'player';
   } else {
     return 'computer';
   }
@@ -69,9 +70,11 @@ function displayWinner(playerScore, computerScore) { //end round, display a winn
     resetButton.style.display = 'block'; //show reset button
 
     if (playerScore > computerScore) {
-      document.querySelector('.round-result').textContent += `You won the game!`;
+      document.querySelector('.game-result').textContent += `You won the game!`;
+      document.querySelector('.game-result').style.color = 'green';
     } else {
       document.querySelector('.game-result').textContent = `Computer won the game.`;
+      document.querySelector('.game-result').style.color = 'red';
     }
   } else return;
 }
