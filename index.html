@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+  <title>Rock, paper, scissors</title>
+  <script src="./test.js" defer></script>
 </head>
+
 <body>
-  <div class="container">
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <h3>Computer score: <span id="computer-score">0</span></h3>
-    <h3>Player score: <span id="player-score">0</span></h3>
-    <h4 class="player-choice"></h4>
-    <h4 class="computer-choice"></h4>
-    <h3 class="result"></h3>
-    <button class="reset">Reset</button>
-  </div>
+  <div class="score">
+    <div class="player-score-container">
+      <h1>Player</h1>
+      <h3 class="player-score">0</h3>
+      </divclass>
+      <div class="computer-score-container">
+        <h1>Computer</h1>
+        <h3 class="computer-score">0</h3>
+      </div>
+    </div>
+    <div class="selections">
+      <button class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+    </div>
+    <div class="round-result"></div>
+    <div class="game-result"></div>
+    <button class="reset" style="display: none;">Reset</button>
 </body>
 
 </html>
